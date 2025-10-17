@@ -8,7 +8,7 @@ const MAX_SUGGESTIONS = 6;
 export function renderApp(root: HTMLElement): void {
   root.innerHTML = `
     <main>
-      <div class="brand hidden" id="brand">
+      <div class="brand" id="brand">
         <img src="${sushiLogo}" alt="Sushi Dictionary logo" class="logo" />
         <h1>sushi dictionary</h1>
       </div>
@@ -42,7 +42,6 @@ export function renderApp(root: HTMLElement): void {
   }
 
   const hideResults = (): void => {
-    brand.classList.add('hidden');
     suggestions.classList.add('hidden');
     card.classList.add('hidden');
     suggestions.replaceChildren();
@@ -59,7 +58,6 @@ export function renderApp(root: HTMLElement): void {
     const filtered = filterCuts(trimmed);
     renderSuggestions(suggestions, filtered, trimmed);
 
-    brand.classList.remove('hidden');
     suggestions.classList.remove('hidden');
 
     const match = findBestMatch(trimmed, filtered);

@@ -14,13 +14,13 @@ describe('Sushi Dictionary entrypoint', () => {
     expect(searchInput?.getAttribute('placeholder')).toContain('Search');
   });
 
-  it('keeps brand and results hidden until typing', async () => {
+  it('shows brand but hides results until typing', async () => {
     await import('./main');
     const brand = document.querySelector('.brand');
     const suggestions = document.querySelector('#cut-suggestions');
     const card = document.querySelector('#cut-card');
 
-    expect(brand?.classList.contains('hidden')).toBe(true);
+    expect(brand?.classList.contains('hidden')).toBe(false);
     expect(suggestions?.classList.contains('hidden')).toBe(true);
     expect(card?.classList.contains('hidden')).toBe(true);
   });
