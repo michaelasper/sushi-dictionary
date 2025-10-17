@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  font-family: 'Manrope', 'Segoe UI', -apple-system, sans-serif;
+  color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f87466;
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+  gap: 3rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  width: min(720px, 90vw);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  width: clamp(60px, 12vw, 84px);
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  font-family: 'Playfair Display', 'Manrope', 'Segoe UI', serif;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+input[type='search'] {
+  width: 80%;
+  max-width: 720px;
+  padding: 1rem 1.25rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #5a423c;
+  font-size: 1.1rem;
+  outline: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type='search']::placeholder {
+  color: rgba(90, 66, 60, 0.55);
+}
+
+input[type='search']:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.suggestions {
+  display: grid;
+  gap: 0.75rem;
+  width: 80%;
+  max-width: 720px;
+}
+
+.suggestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.suggestion:focus-visible,
+.suggestion:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.suggestion-cut {
+  font-weight: 600;
+}
+
+.suggestion-fish {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.empty-state {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cut-card {
+  width: 80%;
+  max-width: 720px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.cut-card h2 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  text-transform: lowercase;
+}
+
+.cut-card dl {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.cut-card dt {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.35rem;
+}
+
+.cut-card dd {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 540px) {
+  .brand {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  input[type='search'] {
+    width: 100%;
+  }
+
+  .suggestions,
+  .cut-card {
+    width: 100%;
+  }
+}
